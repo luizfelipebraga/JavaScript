@@ -61,7 +61,53 @@ for(var i = 0; i<pacientes.length;i++)
     }
 }
 
+var mostrarBotao = document.querySelector("#adicionar-paciente")
+mostrarBotao.addEventListener("click", function(event) {
+    //event.preventDefault previne o evento padrao sem carregar a página e dar clear no log.
+    event.preventDefault();
+    
+    var form = document.querySelector("#formulario");
+    
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+    
+    //criar um novo paciente
+    var pacienteTr = document.createElement("tr");
 
+    var nomeTd = documento.createElement("td");
+    var pesoTd = documento.createElement("td");
+    var alturaTd = documento.createElement("td");
+    var gorduraTd = documento.createElement("td");
+    var imcTd = documento.createElement("td");
+
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+    
+    //appendChild colocar cd um dos filhos no pai;
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imcTd);
+
+    var tabela = document.querySelector("#tabela-pacientes")
+    tabela.appendChild(pacienteTr);
+
+});
+
+// titulo.addEventListener("click", function() {
+//     console.log("Olá, Usuário!")
+// });
+
+// titulo.addEventListener("click", mostrarMensagem);
+
+// function mostrarMensagem() {
+//     console.log("Olá, Usuário!")
+// }
 
 
 
